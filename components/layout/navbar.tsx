@@ -105,17 +105,18 @@ export function Navbar({ session }: NavbarProps) {
                   <LogOut className="w-4 h-4" />
                 </button>
               </form>
-              {session.user.image ? (
-                <img
-                  src={session.user.image}
-                  alt={session.user.name ?? ""}
-                  className="w-8 h-8 rounded-full ring-2 ring-border"
-                />
-              ) : (
-                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                  <User className="w-4 h-4 text-primary" />
-                </div>
-              )}
+             {session.user?.image ? (
+  <img
+    src={session.user.image}
+    alt={session.user?.name ?? ""}
+    className="w-8 h-8 rounded-full ring-2 ring-border"
+  />
+) : (
+  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+    <User className="w-4 h-4 text-primary" />
+  </div>
+)}
+
             </div>
           ) : (
             <div className="flex items-center gap-2">
